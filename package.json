@@ -19,10 +19,10 @@
   "dependencies": {
   },
   "peerDependencies": {
-    "@youwol/http-clients": "^0.1.3",
-    "@youwol/cdn-client": "^0.1.0",
-    "@youwol/fv-group": "^0.1.0",
-    "@youwol/fv-tabs": "^0.0.3"
+    "@youwol/http-clients": "^0.1.10",
+    "@youwol/cdn-client": "^0.1.3",
+    "@youwol/fv-group": "^0.1.1",
+    "@youwol/fv-tabs": "^0.1.2"
   },
   "devDependencies": {
     "brotli": "^1.3.2",
@@ -31,11 +31,11 @@
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "grapesjs": "0.18.3",
-    "@youwol/http-clients": "^0.1.3",
-    "@youwol/flux-view": "^0.1.0",
-    "@youwol/cdn-client": "^0.1.0",
-    "@youwol/fv-group": "^0.1.0",
-    "@youwol/fv-tabs": "^0.0.3",
+    "@youwol/flux-view": "^0.1.1",
+    "@youwol/http-clients": "^0.1.10",
+    "@youwol/cdn-client": "^0.1.3",
+    "@youwol/fv-group": "^0.1.1",
+    "@youwol/fv-tabs": "^0.1.2",
     "rxjs": "6.x",
     "eslint": "7.23.0",
     "eslint-config-prettier": "^8.3.0",
@@ -64,10 +64,10 @@
       "version": "0.0.0"
     },
     "cdnDependencies": {
-      "@youwol/http-clients": "^0.1.3",
-      "@youwol/cdn-client": "^0.1.0",
-      "@youwol/fv-group": "^0.1.0",
-      "@youwol/fv-tabs": "^0.0.3"
+      "@youwol/http-clients": "^0.1.10",
+      "@youwol/cdn-client": "^0.1.3",
+      "@youwol/fv-group": "^0.1.1",
+      "@youwol/fv-tabs": "^0.1.2"
     }
   },
   "prettier": {
