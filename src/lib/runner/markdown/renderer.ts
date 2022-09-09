@@ -49,7 +49,7 @@ export function renderMarkdown() {
                 ],
                 css: [
                     {
-                        resource: 'highlight.js#11.2.0~styles/default.min.css',
+                        resource: 'highlight.js#11.2.0~styles/default.css',
                         domId: 'highlight',
                     },
                 ],
