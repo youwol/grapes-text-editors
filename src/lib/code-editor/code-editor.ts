@@ -1,5 +1,5 @@
 import { combineLatest, Subject } from 'rxjs'
-import { HTMLElement$, VirtualDOM } from '@youwol/flux-view/dist'
+import { HTMLElement$, VirtualDOM } from '@youwol/flux-view'
 import { popupEmojisBrowserModal } from './emoji-picker.view'
 
 export class MarkdownHeaderView {
