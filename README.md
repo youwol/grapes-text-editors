@@ -1,7 +1,9 @@
+# @youwol/grapes-text-editors
+
 Various components for grapes to edit text (markdown, latex, etc) from YouWol team.
 
 This library is part of the hybrid cloud/local ecosystem 
-[YouWol](https://platform.youwol.com/applications/@youwol/platform/latest)
+[YouWol](https://platform.youwol.com/applications/@youwol/platform/latest).
 
 ## Links
 
