@@ -24,11 +24,11 @@ export function renderMarkdown() {
         return
     }
     const cdnClient = window['@youwol/cdn-client']
-    const elemHTML: HTMLElement = this
-    elemHTML.style.setProperty('height', '250px')
-    elemHTML.style.setProperty('position', 'relative')
+
+    this.style.setProperty('height', '250px')
+    this.style.setProperty('position', 'relative')
     const loadingScreen = new cdnClient.LoadingScreenView({
-        container: elemHTML,
+        container: this,
         logo: `<div style='font-size:x-large'>Markdown</div>`,
         wrapperStyle: {
             position: 'absolute',
@@ -49,7 +49,7 @@ export function renderMarkdown() {
                 ],
                 css: [
                     {
-                        resource: 'highlight.js#11.2.0~styles/default.min.css',
+                        resource: 'highlight.js#11.2.0~styles/default.css',
                         domId: 'highlight',
                     },
                 ],
@@ -68,7 +68,7 @@ export function renderMarkdown() {
                 },
             })
             loadingScreen.done()
-            elemHTML.style.setProperty('height', 'auto')
+            this.style.setProperty('height', 'auto')
             parse()
         })
 }
