@@ -1,7 +1,7 @@
 {
     "name": "@youwol/grapes-text-editors",
     "description": "Various components for grapes to edit text (markdown, latex, etc) from YouWol team.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "greinisch@youwol.com",
     "homepage": "https://github.com/youwol/grapes-text-editors#README.md",
     "main": "dist/@youwol/grapes-text-editors.js",
@@ -59,19 +59,19 @@
         ]
     },
     "dependencies": {
-        "@youwol/flux-view": "^1.0.0",
+        "@youwol/flux-view": "^1.0.3",
         "rxjs": "^6.5.5",
-        "@youwol/http-clients": "^1.0.0",
-        "@youwol/fv-tabs": "^0.2.0",
-        "@youwol/fv-group": "^0.2.0"
+        "@youwol/http-clients": "^1.0.2",
+        "@youwol/fv-tabs": "^0.2.1",
+        "@youwol/fv-group": "^0.2.1"
     },
     "youwol": {
         "cdnDependencies": {
-            "@youwol/flux-view": "^1.0.0",
+            "@youwol/flux-view": "^1.0.3",
             "rxjs": "^6.5.5",
-            "@youwol/http-clients": "^1.0.0",
-            "@youwol/fv-tabs": "^0.2.0",
-            "@youwol/fv-group": "^0.2.0"
+            "@youwol/http-clients": "^1.0.2",
+            "@youwol/fv-tabs": "^0.2.1",
+            "@youwol/fv-group": "^0.2.1"
         }
     }
 }
