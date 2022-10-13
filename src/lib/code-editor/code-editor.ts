@@ -47,3 +47,24 @@ export class MathjaxHeaderView {
         Object.assign(this, params)
     }
 }
+
+export class TikzHeaderView {
+    public readonly children: VirtualDOM[] = []
+    public readonly state
+
+    constructor({ state, run }) {
+        Object.assign(this, { state, run })
+        this.children = [
+            {
+                class: 'd-flex w-100 align-items-center',
+                children: [
+                    {
+                        tag: 'i',
+                        class: 'fv-pointer rounded m-1 fas fa-play editor-view-header-run',
+                        onclick: () => run(),
+                    },
+                ],
+            },
+        ]
+    }
+}
