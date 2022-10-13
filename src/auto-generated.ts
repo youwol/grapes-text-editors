@@ -62,7 +62,7 @@ const exportedSymbols = {
 export const setup = {
     name:'@youwol/grapes-text-editors',
         assetId:'QHlvdXdvbC9ncmFwZXMtdGV4dC1lZGl0b3Jz',
-    version:'0.1.1',
+    version:'0.1.2-wip',
     shortDescription:"Various components for grapes to edit text (markdown, latex, etc) from YouWol team.",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/grapes-text-editors',
     npmPackage:'https://www.npmjs.com/package/@youwol/grapes-text-editors',
