@@ -10,7 +10,16 @@ export function renderTikz() {
     \draw (0,0) circle (1in);
 \end{tikzpicture}
 `
-    const src = this.getAttribute('src') || defaultSrc
+    const defaultSrcFct = `
+return async function(scope){
+    return ${defaultSrc}
+}
+`
+
+    const useFunction = this.hasAttribute('implicit')
+    console.log('Use implicit definition', useFunction)
+    const src =
+        this.getAttribute('src') || (useFunction ? defaultSrcFct : defaultSrc)
 
     const cdnClient = window['@youwol/cdn-client']
     const elemHTML: HTMLElement = this
@@ -41,7 +50,10 @@ export function renderTikz() {
             return tikzjax.load()
         })
         .then(({ parse }) => {
-            console.log('SRC', src)
+            if (useFunction) {
+                const fct = new Function(src)()(window['globalJavascript'])
+                return fct.then((content) => parse(content))
+            }
             return parse(src)
         })
         .then((div) => {

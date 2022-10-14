@@ -45,6 +45,11 @@ export class TikzComponent {
 
     getModel() {
         return {
+            initialize() {
+                this.on('change:attributes:implicit', () => {
+                    this.view.render()
+                })
+            },
             defaults: {
                 script: renderTikz,
                 tagName: 'div',
@@ -52,6 +57,14 @@ export class TikzComponent {
                 attributes: {
                     componentType: this.componentType,
                 },
+                traits: [
+                    {
+                        type: 'checkbox',
+                        name: 'implicit',
+                        label: 'Define as function',
+                        value: false,
+                    },
+                ],
             },
         }
     }
