@@ -80,7 +80,7 @@ const entries = {
 export const setup = {
     name:'@youwol/grapes-text-editors',
         assetId:'QHlvdXdvbC9ncmFwZXMtdGV4dC1lZGl0b3Jz',
-    version:'0.1.2-wip',
+    version:'0.1.2',
     shortDescription:"Various components for grapes to edit text (markdown, latex, etc) from YouWol team.",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/grapes-text-editors',
     npmPackage:'https://www.npmjs.com/package/@youwol/grapes-text-editors',
@@ -115,7 +115,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/grapes-text-editors#0.1.2-wip~dist/@youwol/grapes-text-editors/${entry.name}.js`
+            `@youwol/grapes-text-editors#0.1.2~dist/@youwol/grapes-text-editors/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
