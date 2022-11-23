@@ -7,8 +7,10 @@ export function renderMarkdown() {
     this.innerHTML = ``
     const src = this.getAttribute('src') || '# Dbl click to edit'
     const useMathjax = this.getAttribute('mathjax') != null
+    const markedSymbol = 'marked_APIv4'
+    const hljsSymbol = 'hljs_APIv11'
     const parse = () => {
-        this.innerHTML = window['marked'](src)
+        this.innerHTML = window[markedSymbol].parse(src)
         if (useMathjax) {
             const MathJax = window['MathJax']
             Promise.resolve().then(() => {
@@ -17,8 +19,8 @@ export function renderMarkdown() {
         }
     }
     if (
-        (!useMathjax && window['marked']) ||
-        (useMathjax && window['marked'] && window['MathJax'])
+        (!useMathjax && window[markedSymbol]) ||
+        (useMathjax && window[markedSymbol] && window['MathJax'])
     ) {
         parse()
         return
@@ -44,7 +46,7 @@ export function renderMarkdown() {
         .install(
             {
                 modules: [
-                    ...['marked', 'highlight.js'],
+                    ...['marked#^4.2.3', 'highlight.js#^11.2.0'],
                     ...(useMathjax ? ['mathjax'] : []),
                 ],
                 css: [
@@ -61,10 +63,10 @@ export function renderMarkdown() {
             },
         )
         .then(() => {
-            window['marked'].setOptions({
+            window[markedSymbol].setOptions({
                 langPrefix: 'hljs language-',
                 highlight: function (code, lang) {
-                    return window['hljs'].highlightAuto(code, [lang]).value
+                    return window[hljsSymbol].highlightAuto(code, [lang]).value
                 },
             })
             loadingScreen.done()
