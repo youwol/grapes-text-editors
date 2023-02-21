@@ -3,10 +3,38 @@
  * No reference to external symbols is allowed.
  * Implicit argument: 'this' variable is bound to the HTMLElement being rendered
  */
+import { VirtualDOM } from '@youwol/flux-view'
+
+function replaceCustomViews(container: HTMLDivElement, views?: string) {
+    if (!views) {
+        return
+    }
+    new Function(views)()(window)
+        .then((dict: { [k: string]: (any) => VirtualDOM }) => {
+            Object.entries(dict).forEach(([key, view]) => {
+                const elements = container.querySelectorAll(key)
+                elements.forEach((elem) => {
+                    const input = Array.from(elem.attributes).reduce(
+                        (acc, e) => {
+                            return { ...acc, [e.name]: e.value }
+                        },
+                        {},
+                    )
+                    const htmlElement = window['@youwol/flux-view'].render(
+                        view(input),
+                    )
+                    elem.replaceWith(htmlElement)
+                })
+            })
+        })
+        .catch((err) => console.error('Error while parsing views', err))
+}
+
 export function renderMarkdown() {
     this.innerHTML = ``
     const src = this.getAttribute('src') || '# Dbl click to edit'
     const useMathjax = this.getAttribute('mathjax') != null
+    const views = this.getAttribute('views')
     const markedSymbol = 'marked_APIv4'
     const hljsSymbol = 'hljs_APIv11'
     const parse = () => {
@@ -16,6 +44,9 @@ export function renderMarkdown() {
             Promise.resolve().then(() => {
                 MathJax.typesetPromise([this])
             })
+        }
+        if (views != undefined) {
+            replaceCustomViews(this, views)
         }
     }
     if (

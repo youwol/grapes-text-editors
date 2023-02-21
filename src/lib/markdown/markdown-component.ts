@@ -4,6 +4,7 @@ import { renderMarkdown } from '../runner/markdown/renderer'
 import { BehaviorSubject } from 'rxjs'
 import { MarkdownHeaderView } from '../code-editor/code-editor'
 import { MarkdownComponentName } from '../constants'
+import { editSrcTrait } from '../code-editor/utils'
 
 const codeMirrorConfiguration = {
     value: '',
@@ -14,6 +15,11 @@ const codeMirrorConfiguration = {
     indentUnit: 4,
 }
 
+const defaultViewsSrc = `
+return async () => {
+    return {}
+}
+`
 export class MarkdownComponent {
     public readonly appState: AppState
     public readonly grapesEditor: grapesjs.Editor
@@ -64,6 +70,22 @@ export class MarkdownComponent {
                         label: 'parse latex equations',
                         value: false,
                     },
+                    editSrcTrait({
+                        appState: this.appState,
+                        attributeName: 'views',
+                        src: defaultViewsSrc,
+                        language: 'javascript',
+                        grapesEditor: this.grapesEditor,
+                        requirements: {
+                            scripts: [
+                                'codemirror#5.52.0~mode/javascript.min.js',
+                                'codemirror#5.52.0~mode/css.min.js',
+                                'codemirror#5.52.0~mode/xml.min.js',
+                                'codemirror#5.52.0~mode/htmlmixed.min.js',
+                            ],
+                            css: [],
+                        },
+                    }),
                 ],
             },
         }
