@@ -34,6 +34,14 @@ const externals = {
         "commonjs": "@youwol/fv-group",
         "commonjs2": "@youwol/fv-group",
         "root": "@youwol/fv-group_APIv02"
+    },
+    "rxjs/operators": {
+        "commonjs": "rxjs/operators",
+        "commonjs2": "rxjs/operators",
+        "root": [
+            "rxjs_APIv6",
+            "operators"
+        ]
     }
 }
 const exportedSymbols = {
@@ -79,7 +87,7 @@ const entries = {
 export const setup = {
     name:'@youwol/grapes-text-editors',
         assetId:'QHlvdXdvbC9ncmFwZXMtdGV4dC1lZGl0b3Jz',
-    version:'0.1.3-wip',
+    version:'0.1.3',
     shortDescription:"Various components for grapes to edit text (markdown, latex, etc) from YouWol team.",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/grapes-text-editors',
     npmPackage:'https://www.npmjs.com/package/@youwol/grapes-text-editors',
@@ -125,7 +133,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/grapes-text-editors#0.1.3-wip~dist/@youwol/grapes-text-editors/${entry.name}.js`
+            `@youwol/grapes-text-editors#0.1.3~dist/@youwol/grapes-text-editors/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
