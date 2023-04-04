@@ -77,7 +77,11 @@ export function renderMarkdown() {
         .install(
             {
                 modules: [
-                    ...['marked#^4.2.3', 'highlight.js#^11.2.0'],
+                    ...[
+                        'marked#^4.2.3',
+                        'highlight.js#^11.2.0',
+                        '@youwol/flux-view#^1.1.0',
+                    ],
                     ...(useMathjax ? ['mathjax'] : []),
                 ],
                 css: [
